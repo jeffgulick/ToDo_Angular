@@ -1,1 +1,69 @@
 /* You can add global styles to this file, and also import other style files */
+/* Global styles for the entire application */
+/* You can add global styles to this file, and also import other style files */
+
+/* Apply a basic font and box-sizing model */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    background-color: #eef1f5; /* Light background for the page */
+    color: #333; /* Default text color */
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit; /* Inherit box-sizing for all elements */
+  }
+  
+  /* Basic styling for the main app container */
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure container takes at least full viewport height */
+  }
+  
+  .app-header {
+    background-color: #4a5568; /* Darker header */
+    color: white;
+    padding: 15px 30px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .app-header h1 {
+    margin: 0 0 5px 0;
+    font-size: 1.8rem;
+  }
+  .app-header p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+  
+  
+  .app-main-content {
+    flex-grow: 1; /* Allow main content to fill available space */
+    padding: 20px;
+  }
+  
+  .app-footer {
+    background-color: #f8f9fa; /* Light footer */
+    color: #6c757d; /* Grey text */
+    text-align: center;
+    padding: 15px;
+    margin-top: auto; /* Push footer to the bottom */
+    font-size: 0.85rem;
+    border-top: 1px solid #dee2e6;
+  }
+  
+  /* Add some basic button styling globally (optional) */
+  button {
+    cursor: pointer;
+    font-family: inherit; /* Use the same font as the body */
+  }
+  
+  /* Add more global styles as needed */
+  
+  

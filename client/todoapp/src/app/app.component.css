@@ -1,0 +1,60 @@
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  .app-header {
+    background-color: #0f76bb;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .app-header h1 {
+    margin: 0;
+    font-size: 2.5em;
+  }
+  
+  .app-header p {
+    font-style: italic;
+    font-size: 1.1em;
+  }
+  
+  .app-main-content {
+    flex: 1;
+    padding: 20px;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1200px;
+  }
+  
+  .app-footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #4876a3; /* Slightly lighter than before */
+    color: white;
+    font-size: 1em; /* Slightly larger font size */
+    border-top: 3px solid #2c3e50; /* Add a subtle border */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .app-header {
+      padding: 15px;
+    }
+  
+    .app-header h1 {
+      font-size: 2em;
+    }
+  
+    .app-main-content {
+      width: 100%;
+      padding: 10px;
+    }
+  }

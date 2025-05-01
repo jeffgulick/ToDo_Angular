@@ -1,0 +1,203 @@
+/* Enhanced Styles for NotesComponent */
+
+.notes-container {
+  max-width: 700px; /* Wider container */
+  margin: 30px auto; /* More top margin */
+  padding: 30px; /* Increased padding */
+  background-color: #fff; /* White background */
+  border-radius: 12px; /* More rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+  transition: box-shadow 0.3s ease; /* Smooth shadow transition */
+}
+
+/* Make the notes container responsive */
+@media (max-width: 768px) {
+  .notes-container {
+    max-width: 100%;
+    padding: 20px;
+    margin: 15px auto;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .add-note-form {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .add-note-form input[type="text"] {
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .add-note-form button {
+    padding: 10px 15px;
+    font-size: 1rem;
+  }
+
+  .note-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .note-description {
+    margin-right: 0;
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+}
+
+.notes-container:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Even stronger shadow on hover */
+}
+
+h2 {
+  text-align: center;
+  color: #2c3e50; /* Darker, more professional color */
+  margin-bottom: 25px;
+  font-size: 2.2rem; /* Slightly larger font size */
+  font-weight: 600; /* Semi-bold */
+}
+
+/* Improved styling for the add note form */
+.add-note-form {
+  display: flex;
+  gap: 15px; /* Increased gap */
+  margin-bottom: 30px;
+  align-items: center; /* Vertically align items */
+}
+
+.add-note-form input[type="text"] {
+  flex-grow: 1;
+  padding: 12px 15px; /* Increased padding */
+  border: 2px solid #bdc3c7; /* Softer border color */
+  border-radius: 6px;
+  font-size: 1.1rem; /* Slightly larger font */
+  transition: border-color 0.3s ease; /* Smooth border transition */
+}
+
+.add-note-form input[type="text"]:focus {
+  outline: none;
+  border-color: #3498db; /* Highlight border on focus */
+}
+
+.add-note-form button {
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+.add-button {
+  background-color: #27ae60; /* A more vibrant green */
+  color: white;
+  font-weight: 500; /* Semi-bold font */
+}
+
+.add-button:hover:not(:disabled) {
+  background-color: #219651; /* Darker green on hover */
+  transform: scale(1.05); /* Slight scale up on hover */
+}
+
+.add-button:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+  opacity: 0.7; /* Indicate disabled state */
+}
+
+/* Enhanced styling for messages */
+.loading-message,
+.error-message,
+.no-notes-message {
+  text-align: center;
+  padding: 18px; /* Increased padding */
+  margin-top: 25px;
+  border-radius: 8px; /* More rounded corners */
+  font-size: 1.1rem;
+}
+
+.loading-message {
+  color: #777;
+  background-color: #ecf0f1; /* Light grey background */
+}
+
+.error-message {
+  color: #c0392b; /* Darker red */
+  background-color: #fdedec; /* Lighter red background */
+  border: 1px solid #e74c3c;
+}
+
+.no-notes-message {
+  color: #7f8c8d;
+  background-color: #f0f3f4; /* Very light grey background */
+}
+
+/* Improved styling for the list of notes */
+.notes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.note-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px; /* Increased padding */
+  background-color: #f8f9fa; /* Very light grey */
+  border-bottom: 1px solid #dfe6e9;
+  border-radius: 8px; /* More rounded corners */
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Added transform */
+}
+
+.note-item:hover {
+  background-color: #e9ecef; /* Slightly darker grey on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08); /* Subtle shadow on hover */
+}
+
+.note-item:last-child {
+  border-bottom: none;
+}
+
+.note-description {
+  flex-grow: 1;
+  margin-right: 20px; /* Increased margin */
+  word-break: break-word;
+  color: #34495e; /* Darker text color */
+  font-size: 1.1rem;
+}
+
+.delete-button {
+  background-color: #e74c3c; /* A more suitable red */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 32px; /* Slightly larger */
+  height: 32px; /* Slightly larger */
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Added transform */
+}
+
+.delete-button:hover:not(:disabled) {
+  background-color: #c0392b; /* Darker red on hover */
+  transform: scale(1.1); /* Slight scale up on hover */
+}
+
+.delete-button:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+  opacity: 0.7; /* Indicate disabled state */
+}

@@ -1,0 +1,41 @@
+<div class="notes-container">
+    <h2>Tasks / Notes</h2>
+  
+    <div class="add-note-form">
+      <input
+        type="text"
+        id="newNoteInput"
+        placeholder="Enter new task description..."
+        [(ngModel)]="newNoteDescription"
+        (keyup.enter)="addNote()"
+        [disabled]="isLoading"
+        aria-label="New note description"
+      />
+      <button (click)="addNote()" [disabled]="isLoading || !newNoteDescription.trim()" class="add-button">
+        <span *ngIf="!isLoading">Add Note</span>
+        <span *ngIf="isLoading">Adding...</span>
+      </button>
+    </div>
+  
+    <div *ngIf="isLoading && notes.length === 0" class="loading-message">
+      Loading notes... Please wait.
+    </div>
+  
+    <div *ngIf="errorMessage" class="error-message">
+      <strong>Error:</strong> {{ errorMessage }}
+    </div>
+  
+    <div *ngIf="notes.length === 0 && !isLoading && !errorMessage" class="no-notes-message">
+      You have no notes yet. Add one using the form above!
+    </div>
+  
+    <ul class="notes-list" *ngIf="notes.length > 0">
+      <li *ngFor="let note of notes" class="note-item">
+        <span class="note-description">{{ note.description }}</span>
+        <button (click)="deleteNote(note.id)" [disabled]="isLoading" class="delete-button" aria-label="Delete note">
+          &times; </button>
+      </li>
+    </ul>
+  
+  </div>
+  
