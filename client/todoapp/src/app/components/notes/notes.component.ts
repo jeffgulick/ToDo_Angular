@@ -31,7 +31,7 @@ export class NotesComponent implements OnInit {
    * Fetches notes from the API service and updates the component's state.
    */
   loadNotes(): void {
-    this.isLoading = true;
+    this.isLoading = true; // Set loading state to true while fetching data
     this.errorMessage = null; // Clear previous errors
     console.log('NotesComponent: Loading notes...');
 
@@ -39,13 +39,13 @@ export class NotesComponent implements OnInit {
       next: (data) => {
         this.notes = data; // Assign fetched notes to the local array
         console.log('NotesComponent: Notes loaded successfully', this.notes);
-        this.isLoading = false;
+        this.isLoading = false; // Set loading state to false after data is loaded
       },
       error: (err) => {
         console.error('NotesComponent: Error loading notes:', err);
         // Display a user-friendly error message
         this.errorMessage = 'Failed to load notes. Please check the connection and ensure the backend server is running.';
-        this.isLoading = false;
+        this.isLoading = false; // Set loading state to false in case of error
       }
     });
   }
@@ -61,23 +61,23 @@ export class NotesComponent implements OnInit {
       return;
     }
 
-    this.isLoading = true;
-    this.errorMessage = null;
+    this.isLoading = true; // Set loading state to true while adding a note
+    this.errorMessage = null; // Clear any previous error messages
     console.log('NotesComponent: Adding note:', this.newNoteDescription);
 
     this.apiService.addNote({ newNotes: this.newNoteDescription }).subscribe({
       next: (newNote) => {
         console.log('NotesComponent: Note added successfully', newNote);
-        this.notes = [...this.notes, newNote];
-        this.newNoteDescription = '';
-        this.isLoading = false;
+        this.notes = [...this.notes, newNote]; // Add the new note to the notes array
+        this.newNoteDescription = ''; // Clear the input field
+        this.isLoading = false; // Set loading state to false after adding note
         this.cdr.detectChanges();
         this.loadNotes(); // Reload notes to ensure the latest data 
       },
       error: (err) => {
         console.error('NotesComponent: Error adding note:', err);
-        this.errorMessage = 'Failed to add the note. Please try again.';
-        this.isLoading = false;
+        this.errorMessage = 'Failed to add the note. Please try again.'; // Display error message to the user
+        this.isLoading = false; // Set loading state to false in case of error
       }
     });
   }
@@ -92,20 +92,20 @@ export class NotesComponent implements OnInit {
       return;
     }
 
-    this.isLoading = true;
-    this.errorMessage = null;
+    this.isLoading = true; // Set loading state to true while deleting
+    this.errorMessage = null; // Clear previous errors
     console.log('NotesComponent: Deleting note with ID:', id);
 
     this.apiService.deleteNote(id).subscribe({
       next: (response) => {
         console.log('NotesComponent: Note deleted successfully', response);
         this.notes = this.notes.filter(note => note.id !== id); // Filter by 'id'
-        this.isLoading = false;
+        this.isLoading = false; // Set loading state to false after deleting
       },
       error: (err) => {
         console.error('Error deleting note:', err);
-        this.errorMessage = 'Failed to delete the note. Please try again.';
-        this.isLoading = false;
+        this.errorMessage = 'Failed to delete the note. Please try again.'; // Display error message
+        this.isLoading = false; // Set loading state to false in case of error
       }
     });
   }
